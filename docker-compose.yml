@@ -1,0 +1,43 @@
+version: '3'
+services:
+  # React App
+  frontend:
+    build:
+      context: ./web
+      dockerfile: ../Dockerfile
+    image: nodejs
+    container_name: proffy_frontend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - CHOKIDAR_USEPOLLING=$CHOKIDAR_USEPOLLING
+    ports:
+      - "80:3000"
+    volumes:
+      - ./web/:/home/node/app
+      - ./web/node_modules:/home/node/app/node_modules
+    command: npm run start
+    stdin_open: true
+  backend:
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile
+    image: nodejs
+    container_name: proffy_backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server/:/home/node/app
+      - ./server/node_modules:/home/node/app/node_modules
+    command: npm run start
+  db:
+    container_name:  proffy_db
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE:  proffy
+      MYSQL_USER:  proffy
+      MYSQL_PASSWORD:  proffy-db-passwd
+      MYSQL_ROOT_PASSWORD: proffy-root-db-passwd
+    ports:
+      - 3306:3306
