@@ -31,10 +31,10 @@ A página consiste de três elementos principais:
 O primeiro botão direciona o usuário para a página de **Listagem de Aulas**, enquanto o segundo leva para o **Formulário de Cadastro de Aulas**. Abaixo o layout desktop e mobile da tela em questão:
 
 #### Layout Mobile
-![layout landing page mobile](https://lh3.googleusercontent.com/sbyY75YM8MKWYy3_cmQpLZvK49pqkYoe38ahxWYbMQOC4soPxWCvSKkyh-yo8GvqQ0gM4sy3hMA "layout landing page mobile")
+![layout landing page mobile](https://github.com/xikaos/proffy/blob/master/docs/img/layout/mobile/landing-page/landing-page.png?raw=true "layout landing page mobile")
 
 #### Layout Desktop
-![enter image description here](https://lh3.googleusercontent.com/OEgrGocGJFbmve-YgLH_Yyhe0sXUnE-6GFv7a7iMOuZC3ZXlnMF1o2Q9fqSdPGnfUOpC-2z60-k "layout landing page desktop")
+![enter image description here](https://github.com/xikaos/proffy/blob/master/docs/img/layout/desktop/landing-page/landing-page.png?raw=true "layout landing page desktop")
 
 ### Listagem de Aulas
 
@@ -46,10 +46,10 @@ A página é composta por três elementos principais:
 Abaixo o layout mobile e desktop da página:
 
 #### Layout Mobile
-![enter image description here](https://lh3.googleusercontent.com/h7DKeXZ1RstYITl683kGwVunW64I_MozDx43P8fquiXquFNIw2JtftpkbEMVsvX8ZdIKu27Gk4E "layout mobile listagem de aulas")
+![enter image description here](https://github.com/xikaos/proffy/blob/master/docs/img/layout/mobile/class-list/class-list.png?raw=true "layout mobile listagem de aulas")
 
 #### Layout Desktop
-![enter image description here](https://lh3.googleusercontent.com/_MqRgvMka1blJOnQm6RhMkK5hNjOdOpyegHdWW7j0ynz0_fMzVm9Pr5T1EOBEgYgduelOvYN1Pk "layout desktop listagem de aulas")
+![enter image description here](https://github.com/xikaos/proffy/blob/master/docs/img/layout/desktop/class-list/class-list.png?raw=true "layout desktop listagem de aulas")
 
 ### Formulário de Cadastro de Aulas
 TODO
