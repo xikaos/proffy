@@ -1,31 +1,54 @@
 import React from 'react'
+import api from '../../services/api';
 
 import './styles.css'
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
-function TeacherItem() {
+export interface Teacher {
+  id: number,
+  name: string,
+  avatar: string,
+  subject: string,
+  bio: string,
+  cost: number,
+  whatsapp: string
+}
+
+interface TeacherItemProps {
+  teacher: Teacher
+}
+
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post('/connections', { user_id: teacher.id })
+  }
+
   return (
     <article className="teacher-item">
           <header>
-            <img src="https://avatars3.githubusercontent.com/u/3723250?s=460&u=cb87055791d78d4e44f6091a8f30be1bfe47540d&v=4" alt=""/>
+            <img src={ teacher.avatar } alt=""/>
             <div>
-              <strong>Francisco Zanatta</strong>
-              <span>Software Engineer</span>
+              <strong>{ teacher.name }</strong>
+              <span>{ teacher.subject }</span>
             </div>
           </header>
           <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. A ordem dos tratores não altera o pão duris. Quem num gosta di mé, boa gentis num é. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
+            { teacher.bio }
           </p>
           <footer>
             <p>
               Preço/hora
-              <strong>R$ 80,00</strong>
+              <strong>R$ { teacher.cost }</strong>
             </p>
-            <button type="button">
+            <a 
+              target="_blank"
+              onClick={ createNewConnection }
+              href={ `https://api.whatsapp.com/send?phone=${teacher.whatsapp}&text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20através%20do%20Proffy!` }
+            >
               <img src={whatsappIcon} alt="Whatsapp"/>
               Entrar em Contato
-            </button>
+            </a>
           </footer>
         </article>
   );
